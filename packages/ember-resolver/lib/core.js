@@ -123,6 +123,11 @@ define("ember/resolver",
     tmpModuleName = podPrefix + '/' + name + '/' + parsedName.type;
     if (moduleEntries[tmpModuleName]) {
       moduleName = tmpModuleName;
+    } else {
+      tmpModuleName = podPrefix + '/' + name;
+      if (moduleEntries[tmpModuleName]) {
+        moduleName = tmpModuleName;
+      }
     }
 
     // if not using POD format, use the custom prefix
